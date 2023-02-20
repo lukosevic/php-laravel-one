@@ -1,15 +1,20 @@
 @extends('main')
 @section('content')
 <h1 class="mt-4">p21d371 f11m4</h1>
-<form action="" method="post">
+@include('_partials/errors')
+<form action="/storeMovie" method="post">
+    @csrf
     <div class="form-group m-1">
         <input type="text" class="form-control" name="title" placeholder="f11m0 p4v4d1n1m45">
     </div>
     <div class="form-group m-1">
-        <input type="text" class="form-control" name="title" placeholder="1md8 23171n945">
+        <input type="text" class="form-control" name="imdb" placeholder="1md8 23171n945">
     </div>
     <div class="form-group m-1">
-        <input type="text" class="form-control" name="title" placeholder="232151321u5">
+        <input type="text" class="form-control" name="director" placeholder="232151321u5">
+    </div>
+    <div class="form-group m-1">
+        <input type="date" class="form-control" name="created" placeholder="5uku21m0 d474">
     </div>
     <div class="form-group m-1">
         <select name="category" class="form-control">

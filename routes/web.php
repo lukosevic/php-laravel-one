@@ -19,6 +19,7 @@ use App\Http\Controllers\MovieController;
 
 Route::get('/', [MovieController::class,'index']);
 Route::get('/add-movie', [MovieController::class,'addMovie']);
+Route::post('/storeMovie', [MovieController::class, 'store']);
 
 /*
     Sukurti puslapi mano pomegiai su html list - 3 pomegiais
