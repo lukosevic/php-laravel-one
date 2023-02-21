@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\HobbyController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ Route::get('/movie/{movie}',[MovieController::class, 'showMovie']);
 Route::get('/movie/edit/{movie}', [MovieController::class,'editMovie']);
 Route::post('/update/{movie}', [MovieController::class,'storeUpdate']);
 Route::get('/movie/delete/{movie}',[MovieController::class,'deleteMovie']);
+Route::get('/add-category', [CategoryController::class,'addCategory']);
+Route::post('/storeCategory', [CategoryController::class, 'store']);
+Route::get('/category/',[CategoryController::class, 'showCategory']);
 
 /*
     Sukurti puslapi mano pomegiai su html list - 3 pomegiais

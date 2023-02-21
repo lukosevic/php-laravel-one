@@ -27,7 +27,7 @@
         <textarea name="description" placeholder="4p245ym45" class="form-control"></textarea>
     </div>
     <div class="form-group m-1">
-        <label">Plakatas</label>
+        <label>Plakatas</label>
         <input type="file" class="form-control" name="poster"> 
     </div>
     <div class="form-group m-1">

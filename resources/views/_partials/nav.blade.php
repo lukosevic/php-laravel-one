@@ -7,10 +7,10 @@
                 <li class="nav-item active"><a class="nav-link" href="/">h0m3</a></li>
                 <li class="nav-item"><a class="nav-link" href="/add-movie">n4uj45 f11m45</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategorijos</a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#!">4c710n</a>
-                        <a class="dropdown-item" href="#!">4n07h32 4c710n</a>
+                        <a class="dropdown-item" href="/add-category">Nauja kategorija</a>
+                        <a class="dropdown-item" href="/category">Visos kategorijos</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#!">50m37h1n9 3153 h323</a>
                     </div>
