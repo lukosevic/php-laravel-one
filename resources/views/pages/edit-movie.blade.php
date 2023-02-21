@@ -1,20 +1,20 @@
 @extends('main')
 @section('content')
-<h1 class="mt-4">Pridet filmą</h1>
+<h1 class="mt-4">Redaguoti informaciją apie filmą</h1>
 @include('_partials/errors')
-<form action="/storeMovie" method="post" enctype="multipart/form-data">
+<form action="/update/{{$movie->id}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-group m-1">
-        <input type="text" class="form-control" name="title" placeholder="filmo pavadinimas" >
+        <input type="text" class="form-control" name="title" placeholder="Filmo pavadinimas" value="{{$movie->title}}" >
     </div>
     <div class="form-group m-1">
-        <input type="text" class="form-control" name="imdb" placeholder="imdb">
+        <input type="text" class="form-control" name="imdb" placeholder="IMDB rating" value="{{$movie->imdb}}">
     </div>
     <div class="form-group m-1">
-        <input type="text" class="form-control" name="director" placeholder="232151321u5">
+        <input type="text" class="form-control" name="director" placeholder="Režisierius" value="{{$movie->director}}">
     </div>
     <div class="form-group m-1">
-        <input type="date" class="form-control" name="created" placeholder="5uku21m0 d474">
+        <input type="date" class="form-control" name="created" placeholder="Sukūrimo data" value="{{$movie->created}}">
     </div>
     <div class="form-group m-1">
         <select name="category" class="form-control">
@@ -24,10 +24,10 @@
         </select>
     </div>
     <div class="form-group m-1">
-        <textarea name="description" placeholder="4p245ym45" class="form-control"></textarea>
+        <textarea name="description" placeholder="Filmo aprašymas" class="form-control">{{$movie->description}}</textarea>
     </div>
     <div class="form-group m-1">
-        <label">Plakatas</label>
+        <label">p14k4745</label>
         <input type="file" class="form-control" name="poster"> 
     </div>
     <div class="form-group m-1">
