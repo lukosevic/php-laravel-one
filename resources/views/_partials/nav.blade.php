@@ -10,7 +10,7 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategorijos</a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/add-category">Nauja kategorija</a>
-                        <a class="dropdown-item" href="/category">Visos kategorijos</a>
+                        <a class="dropdown-item" href="/all-categories">Visos kategorijos</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#!">50m37h1n9 3153 h323</a>
                     </div>

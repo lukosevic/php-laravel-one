@@ -25,9 +25,16 @@ Route::get('/movie/{movie}',[MovieController::class, 'showMovie']);
 Route::get('/movie/edit/{movie}', [MovieController::class,'editMovie']);
 Route::post('/update/{movie}', [MovieController::class,'storeUpdate']);
 Route::get('/movie/delete/{movie}',[MovieController::class,'deleteMovie']);
+Route::get('/search', [MovieController::class, 'search']);
+Route::post('/searchResults', [MovieController::class, 'searchResults']);
+
 Route::get('/add-category', [CategoryController::class,'addCategory']);
 Route::post('/storeCategory', [CategoryController::class, 'store']);
-Route::get('/category/',[CategoryController::class, 'showCategory']);
+Route::get('/all-categories',[CategoryController::class, 'index']);
+Route::get('/category/delete/{category}', [CategoryController::class,'deleteCategory']);
+Route::get('/category/edit/{category}', [CategoryController::class,'editCategory']);
+Route::post('/category/update/{category}', [CategoryController::class,'storeUpdate']);
+Route::get('/category/{category}', [CategoryController::class,'showCategory']);
 
 /*
     Sukurti puslapi mano pomegiai su html list - 3 pomegiais

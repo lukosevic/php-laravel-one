@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Movie;
+use App\Models\Category;
 use File;
 
 class MovieController extends Controller
@@ -13,25 +14,29 @@ class MovieController extends Controller
         return view('pages.home', compact('movies'));
     }
     public function addMovie(){
-        return view('pages.add-movie');
+        $categories = Category::all();
+
+        return view('pages.add-movie', compact('categories'));
     }
     public function store(Request $request){
         $validated = $request->validate([
             'title'=>'required|unique:movies|max:255',
             'director'=>'required',
             'description'=>'required',
+            'category'=>'required',
             'poster'=>'mimes:jpeg,png,gif',
         ]);
-        if(request()->hasFile('poster')){
+      
             $path = $request->file('poster')->store('public/images');
             $fileName = str_replace('public/','',$path);
-        }
+       
         Movie::create([
             'title'=>request('title'),
             'imdb'=>request('imdb'),
             'director'=>request('director'),
             'description'=>request('description'),
             'created'=>request('created'),
+            'category_id'=>request('category'),
             'poster'=>$fileName,
         ]);
 
@@ -59,5 +64,15 @@ class MovieController extends Controller
         $movie->delete();
 
         return redirect('/');
+    }
+
+    public function search(){
+        return view('pages.search');
+    }
+
+    public function searchResults(){
+        $results = Movie::where('title', 'like', '%'.request('search').'%')->get();
+
+        return view('pages.search',compact('results'));
     }
 }

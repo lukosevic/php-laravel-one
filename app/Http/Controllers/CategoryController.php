@@ -15,9 +15,9 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('pages.home', compact('categories'));
+        return view('pages.show-category', compact('categories'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -42,7 +42,10 @@ class CategoryController extends Controller
             'title'=>request('title')
         ]);
 
-        return redirect('/');
+        return redirect('/all-categories');
+        }
+        public function editCategory(Category $category){
+            return view('pages.edit-category', compact('category'));
         }
         //
 
@@ -54,40 +57,39 @@ class CategoryController extends Controller
      * 
      * 
      */
-    public function showCategory(Category $category){
-        return view('pages.show-category', compact('categories'));
-    }
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
-     */
-    public function edit(Category $category)
-    {
-        //
-    }
-
-    /**
+     
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
-    {
-        //
-    }
-
+    public function storeUpdate(Category $category,Request $request){
+        Category::where('id',$category->id)->update(
+            $request->only(['title'])
+        );
+        return redirect('/all-categories');
+    } 
+        
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function deleteCategory(Category $category)
     {
-        //
+        $category->delete();
+        return redirect('/all-categories');
+    }
+
+    public function showCategory(Category $category){
+        return view('pages.category', compact('category'));
+
     }
 }
